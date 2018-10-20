@@ -3,8 +3,8 @@ import sys
 
 from .create_db import main as update_database
 
-
-def main():
+# expose the main function as API using flask 
+def main(roll_no):
 	INR = u"\u20B9"
 
 	ip = input('Update the database? - (Y/N) : ')
@@ -16,9 +16,9 @@ def main():
 	dues_list = shelve.open('dues')
 	while True:
 		try:
-			print()
-			roll_no = input('Enter roll no: ')
-			print()
+			# print()
+			# roll_no = input('Enter roll no: ')
+			# print()
 			roll_no = roll_no.upper()
 			if roll_no in dues_list:
 				print("Name:", dues_list[roll_no][0])
